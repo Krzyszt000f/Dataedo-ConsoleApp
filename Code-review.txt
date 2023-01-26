@@ -1,0 +1,10 @@
+- Zbędne usingi zarówno w Program.cs jak i DataReader.cs
+- Nazwa pliku przekazywana do funkcji "ImportAndPrintData" ma literówkę w postaci podwójnego 'a'
+- Do "ImportAndPrintData" jest przekazywany parametr "printData", który nie jest używany w funkcji
+- StreamReader nie ma walidacji wejścia co w przypadku błędnej ścieżki do pliku zwraca błąd
+- Plik "data.csv" zawiera linie o różnej ilości rekordów oraz puste linie. Żeby mieć pewność, że nie uzyskamy null reference exception, w momencie wywołania metody split na wybranej linii, musimy za każdym razem sprawdzić czy zmienna values posiada wspomniane 7 zmiennych
+- W bloku "clear and correct imported data" w dalszym ciągu znajdują się zmienne z wartościami null, które również trzeba uwzględnić przy poprawkach aby nie uzyskać null reference exception
+- W bloku "assign number of children" instrukcje warunkowe możemy ze sobą połączyć
+- Klasy ImportedObject i ImportedObjectBaseClass można wydzielić do odzielnych plików
+- Pole "NumberOfChildren" w klasie "ImportedObject" może być typu int, ponieważ zawsze będzie do niego przypisana wartość typu całkowitego i jednocześnie typ ten wymaga mniejszych zasobów pamięciowych
+- W klasie "ImportedObject" należy dodać get i set przy tych właściwościach gdzie ich brakuje
